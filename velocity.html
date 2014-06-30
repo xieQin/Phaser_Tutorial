@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Phaser Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<script src="assets/js/phaser.min.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+	var game = new Phaser.Game(800,600,Phaser.AUTO,'', {preload:preload, create:create})
+
+	function preload () {
+		game.load.image('logo', 'phaser.png');
+	}
+
+	function create () {
+		var image = game.add.sprite(0,0,'logo');
+		game.physics.enable(image,Phaser.Physics.ARCADE);
+
+		image.body.velocity.x = 150;
+	}
+
+</script>
+</body>
+</html>
