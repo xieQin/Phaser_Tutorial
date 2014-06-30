@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Breakout</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script src="assets/js/phaser.min.js"></script>
+</head>
+<body>
+    <script type="text/javascript">
+    	var game = new Phaser.Game(800,600,Phaser.AUTO,'',{preload: preload, create: create, update: update});
+    	function preload () {
+    		game.load.atlas('breakout','assets/image/breakout.png','assets/json/breakout.json');
+    		game.load.image('starfield','assets/image/starfield.png');
+    	}
+
+    	var ball;
+    	var paddle;
+    	var bricks;
+
+    	var ballOnPaddle = true;
+    	var lives = 3;
+    	var score = 0;
+
+    	var scoreText;
+    	var livesText;
+    	var introText;
+
+    	var s;
+
+    	function create () {
+
+    	}
+
+    	function update () {
+
+    	}
+    </script>
+</body>
+</html>
