@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Phaser Example</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script src="phaser.min.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+	var game = new Phaser.Game(800,600,Phaser.AUTO,'', {preload: preload, create: create});
+	var counter = 0;
+	var text;
+
+	function preload () {
+		game.load.image('logo','phaser.png');
+	}
+
+	function create () {
+		var image = game.add.sprite(game.world.centerX,game.world.centerY, 'logo');
+		image.anchor.set(0.5);
+		image.inputEnabled = true;
+		text = game.add.text(250,16,'', {fill : '#ffffff'});
+		image.events.onInputDown.add(listener,this);
+	}
+
+	function listener () {
+		counter++;
+		text.text = "You clicked " + counter + " times!";
+
+	}
+</script>
+    
+</body>
+</html>
